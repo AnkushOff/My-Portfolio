@@ -1,5 +1,7 @@
+"use client"
+
 import Link from "next/link"
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
+import { ArrowRight, Github, Linkedin, Mail, Download } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { ProjectCard } from "@/components/project-card"
@@ -14,6 +16,20 @@ import { SectionHeading } from "@/components/section-heading"
 import { GlassmorphicCard } from "@/components/glassmorphic-card"
 
 export default function Portfolio() {
+  const handleDownloadResume = () => {
+    // Method 1: If you have a PDF file in the public folder
+    const link = document.createElement("a")
+    link.href = "/Ankush_Nag_Resume.pdf" // Place your PDF in the public folder
+    link.download = "Ankush_Nag_Resume.pdf"
+    link.target = "_blank"
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+
+    // Method 2: Alternative - Direct link (uncomment if you prefer this)
+    // window.open('/Ankush_Nag_Resume.pdf', '_blank')
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-zinc-900 via-zinc-900 to-black text-white overflow-hidden">
       <MouseFollower />
@@ -32,7 +48,7 @@ export default function Portfolio() {
           <div className="space-y-6">
             <div className="inline-block">
               <div className="relative px-3 py-1 text-sm font-medium rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-4 mt-4">
-                <span className="relative z-10">Software Engineer / Data Scientist  </span>
+                <span className="relative z-10">Software Engineer / Data Scientist </span>
                 <span className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 animate-pulse"></span>
               </div>
             </div>
@@ -54,7 +70,8 @@ export default function Portfolio() {
               </Button>
               <Button
                 variant="outline"
-                className="border-zinc-700 text-pink-500 hover:text-pink-700 hover:border-zinc-500 bg-transparent">
+                className="border-zinc-700 text-pink-500 hover:text-pink-700 hover:border-zinc-500 bg-transparent"
+              >
                 Contact Me
               </Button>
             </div>
@@ -135,9 +152,9 @@ export default function Portfolio() {
             <div className="space-y-6">
               <GlassmorphicCard>
                 <p className="text-lg text-zinc-300">
-                  I’m a Computer Science undergraduate passionate about building impactful technology—from scalable
+                  I'm a Computer Science undergraduate passionate about building impactful technology—from scalable
                   software systems to data-driven solutions. With hands-on experience in web development, automation,
-                  and data analytics, I’ve worked on projects that combine clean architecture, intelligent systems, and
+                  and data analytics, I've worked on projects that combine clean architecture, intelligent systems, and
                   business insight.
                 </p>
                 <p className="text-lg text-zinc-300 mt-4">I specialize in:</p>
@@ -173,7 +190,13 @@ export default function Portfolio() {
                 </div>
 
                 <div className="mt-8">
-                  <Button className="bg-zinc-800 hover:bg-zinc-700 text-white">Download Resume</Button>
+                  <Button
+                    onClick={handleDownloadResume}
+                    className="bg-zinc-800 hover:bg-zinc-700 text-white flex items-center gap-2"
+                  >
+                    <Download className="h-4 w-4" />
+                    Download Resume
+                  </Button>
                 </div>
               </GlassmorphicCard>
             </div>
@@ -334,9 +357,7 @@ export default function Portfolio() {
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">Bright</span>
               <span className="text-white">ANK</span>
             </Link>
-            <p className="text-sm text-zinc-500 mt-2">
-              © {new Date().getFullYear()} Ankush Nag. All rights reserved.
-            </p>
+            <p className="text-sm text-zinc-500 mt-2">© {new Date().getFullYear()} Ankush Nag. All rights reserved.</p>
           </div>
           <div className="flex gap-4">
             <Link href="https://github.com/AnkushOff" target="_blank" rel="noopener noreferrer">
