@@ -16,7 +16,7 @@ import { SectionHeading } from "@/components/section-heading"
 import { GlassmorphicCard } from "@/components/glassmorphic-card"
 
 export default function Portfolio() {
-  const handleDownloadResume = () => {
+const handleDownloadResume = () => {
     // Method 1: If you have a PDF file in the public folder
     const link = document.createElement("a")
     link.href = "/Ankush_Nag_Resume.pdf" // Place your PDF in the public folder
@@ -62,13 +62,16 @@ export default function Portfolio() {
               I craft exceptional digital experiences with code, creativity, and a passion for innovation.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button className="relative overflow-hidden group bg-gradient-to-r from-purple-500 to-pink-500 border-0">
+              <Button
+              onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
+               className="relative overflow-hidden group bg-gradient-to-r from-purple-500 to-pink-500 border-0">
                 <span className="relative z-10 flex items-center">
                   View Projects <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </span>
                 <span className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity"></span>
               </Button>
               <Button
+              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
                 variant="outline"
                 className="border-zinc-700 text-pink-500 hover:text-pink-700 hover:border-zinc-500 bg-transparent"
               >
@@ -246,7 +249,7 @@ export default function Portfolio() {
               title="Tic Tac Toe Game"
               description="A interactive game built with TypeScript, Tailwind CSS and Vite"
               tags={["React", "TypeScript", "Tailwind CSS", "Vite"]}
-              image="/placeholder.svg?height=400&width=600"
+              image="/tic-tac-toe-game.svg?height=400&width=600"
               repoUrl="https://github.com/AnkushOff/Tic-Tac-Toe"
             />
             <ProjectCard
@@ -261,14 +264,14 @@ export default function Portfolio() {
               title="Covid 19 Risk Predictor"
               description="A professional AI-powered web application that predicts COVID-19 mortality risk using machine learning algorithms. Features comprehensive patient data collection, real-time risk scoring, and clinical recommendations with a medical-grade interface."
               tags={["React Hooks", "JavaScript", "TypeScript", "Tailwind CSS"]}
-              image="/placeholder.svg?height=400&width=600"
+              image="/risk-predictor.svg?height=400&width=600"
               repoUrl="https://github.com/AnkushOff/Covid-19-Risk-Predictor"
             />
             <ProjectCard
               title="Portfolio Website"
               description="This portfolio website built with Next.js and Tailwind CSS."
               tags={["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"]}
-              image="/placeholder.svg?height=400&width=600"
+              image="/my-portfolio.svg?height=400&width=600"
               demoUrl="https://example.com"
               repoUrl="https://github.com"
             />

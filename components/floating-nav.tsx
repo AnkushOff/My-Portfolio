@@ -40,6 +40,20 @@ export function FloatingNav() {
     }
   }
 
+  const handleDownloadResume = () => {
+    // Method 1: If you have a PDF file in the public folder
+    const link = document.createElement("a")
+    link.href = "/Ankush_Nag_Resume.pdf" // Place your PDF in the public folder
+    link.download = "Ankush_Nag_Resume.pdf"
+    link.target = "_blank"
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+
+    // Method 2: Alternative - Direct link (uncomment if you prefer this)
+    // window.open('/Ankush_Nag_Resume.pdf', '_blank')
+  }
+
   return (
     <>
       <motion.div
@@ -54,7 +68,9 @@ export function FloatingNav() {
           {isMobile ? (
             <div className="relative flex items-center justify-between">
               <Link href="/" className="font-bold text-lg">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">Bright</span>
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
+                  Bright
+                </span>
                 <span className="text-white">ANK</span>
               </Link>
               <Button
@@ -69,7 +85,9 @@ export function FloatingNav() {
           ) : (
             <div className="relative flex items-center gap-1">
               <Link href="/" className="font-bold text-lg mr-4">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">{"Bright"}</span>
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
+                  {"Bright"}
+                </span>
                 <span className="text-white">{"ANK"}</span>
               </Link>
               {navItems.map((item) => (
@@ -83,6 +101,7 @@ export function FloatingNav() {
                 </Link>
               ))}
               <Button
+                onClick={handleDownloadResume}
                 size="sm"
                 className="ml-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0"
               >
@@ -112,7 +131,10 @@ export function FloatingNav() {
                 {item.name}
               </Link>
             ))}
-            <Button className="mt-6 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0">
+            <Button
+              onClick={handleDownloadResume}
+              className="mt-6 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0"
+            >
               Resume
             </Button>
           </div>
