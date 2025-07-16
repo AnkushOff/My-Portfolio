@@ -14,21 +14,39 @@ import { useToast } from "@/hooks/use-toast"
 export function ContactForm() {
   const { toast } = useToast()
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [subject, setSubject] = useState("")
+  const [message, setMessage] = useState("")
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    const recipientEmail = "your-email@example.com" // IMPORTANT: Replace with your actual email address
+    const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`
 
-    toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    })
-
-    setIsSubmitting(false)
-    e.currentTarget.reset()
+    try {
+      window.location.href = mailtoLink
+      toast({
+        title: "Opening email client...",
+        description: "Please complete and send the email from your mail application.",
+      })
+      // Reset form fields after attempting to open mailto
+      setName("")
+      setEmail("")
+      setSubject("")
+      setMessage("")
+    } catch (error) {
+      console.error("Failed to open mailto link:", error)
+      toast({
+        title: "Error",
+        description: "Could not open email client. Please try again or contact directly.",
+        variant: "destructive",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -50,6 +68,8 @@ export function ContactForm() {
                 placeholder="Your Name"
                 required
                 className="bg-zinc-900/50 border-zinc-700 focus:border-purple-500 focus:ring-purple-500/20"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div className="space-y-2">
@@ -58,6 +78,8 @@ export function ContactForm() {
                 placeholder="Your Email"
                 required
                 className="bg-zinc-900/50 border-zinc-700 focus:border-purple-500 focus:ring-purple-500/20"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="space-y-2">
@@ -65,6 +87,8 @@ export function ContactForm() {
                 placeholder="Subject"
                 required
                 className="bg-zinc-900/50 border-zinc-700 focus:border-purple-500 focus:ring-purple-500/20"
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
               />
             </div>
             <div className="space-y-2">
@@ -73,6 +97,8 @@ export function ContactForm() {
                 rows={5}
                 required
                 className="bg-zinc-900/50 border-zinc-700 focus:border-purple-500 focus:ring-purple-500/20"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
               />
             </div>
             <Button
@@ -81,7 +107,7 @@ export function ContactForm() {
               disabled={isSubmitting}
             >
               {isSubmitting ? (
-                <>Sending...</>
+                <>Opening...</>
               ) : (
                 <>
                   Send Message <Send className="ml-2 h-4 w-4" />

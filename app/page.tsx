@@ -100,16 +100,6 @@ export default function Portfolio() {
                   <span className="sr-only">LinkedIn</span>
                 </Button>
               </Link>
-              <Link href="mailto:ankushnag03@gmail.com">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
-                >
-                  <Mail className="h-5 w-5" />
-                  <span className="sr-only">Email</span>
-                </Button>
-              </Link>
             </div>
           </div>
           <div className="flex justify-center">
@@ -343,7 +333,7 @@ export default function Portfolio() {
                 <h4 className="text-lg font-medium mb-4">Current Status</h4>
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
-                  <span>Available for freelance work and full-time opportunities</span>
+                  <span>Available for full-time opportunities</span>
                 </div>
               </div>
             </GlassmorphicCard>
@@ -382,16 +372,6 @@ export default function Portfolio() {
               >
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
-              </Button>
-            </Link>
-            <Link href="mailto:ankushnag03@gmail.com">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
-              >
-                <Mail className="h-5 w-5" />
-                <span className="sr-only">Email</span>
               </Button>
             </Link>
           </div>
