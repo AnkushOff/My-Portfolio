@@ -16,11 +16,11 @@ import { SectionHeading } from "@/components/section-heading"
 import { GlassmorphicCard } from "@/components/glassmorphic-card"
 
 export default function Portfolio() {
-const handleDownloadResume = () => {
+  const handleDownloadResume = () => {
     // Method 1: If you have a PDF file in the public folder
     const link = document.createElement("a")
-    link.href = "/Ankush_Nag_Resume.pdf" // Place your PDF in the public folder
-    link.download = "Ankush_Nag_Resume.pdf"
+    link.href = "/Ankush_Nag_Resume.pdf" // Use the exact filename
+    link.download = "Ankush_Nag_Resume.pdf" // Use the exact filename for download
     link.target = "_blank"
     document.body.appendChild(link)
     link.click()
@@ -63,15 +63,16 @@ const handleDownloadResume = () => {
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <Button
-              onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
-               className="relative overflow-hidden group bg-gradient-to-r from-purple-500 to-pink-500 border-0">
+                onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
+                className="relative overflow-hidden group bg-gradient-to-r from-purple-500 to-pink-500 border-0"
+              >
                 <span className="relative z-10 flex items-center">
                   View Projects <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </span>
                 <span className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity"></span>
               </Button>
               <Button
-              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
                 variant="outline"
                 className="border-zinc-700 text-pink-500 hover:text-pink-700 hover:border-zinc-500 bg-transparent"
               >
@@ -155,7 +156,7 @@ const handleDownloadResume = () => {
             <div className="space-y-6">
               <GlassmorphicCard>
                 <p className="text-lg text-zinc-300">
-                  I'm a Computer Science undergraduate passionate about building impactful technology—from scalable
+                  I'm a Computer Science undergraduate passionate about building impactful technology, from scalable
                   software systems to data-driven solutions. With hands-on experience in web development, automation,
                   and data analytics, I've worked on projects that combine clean architecture, intelligent systems, and
                   business insight.
@@ -200,6 +201,7 @@ const handleDownloadResume = () => {
                     <Download className="h-4 w-4" />
                     Download Resume
                   </Button>
+                  {/* Temporary direct link for testing */}
                 </div>
               </GlassmorphicCard>
             </div>
@@ -221,12 +223,12 @@ const handleDownloadResume = () => {
             <SkillBadge name="Python" level={85} />
             <SkillBadge name="C++" level={85} />
             <SkillBadge name="Java" level={75} />
-            <SkillBadge name="Data Structure" level={80} />
-            <SkillBadge name="OPPs" level={80} />
-            <SkillBadge name="HTML/CSS" level={90} />
+            <SkillBadge name="Data Structure" level={75} />
+            <SkillBadge name="OPPs" level={75} />
+            <SkillBadge name="PowerBi" level={85} />
+            <SkillBadge name="Visual Studio" level={90} />
             <SkillBadge name="Data Bricks" level={80} />
             <SkillBadge name="SQL" level={75} />
-            <SkillBadge name="PowerBi" level={85} />
             <SkillBadge name="AWS" level={65} />
             <SkillBadge name="Tableau" level={60} />
             <SkillBadge name="Git" level={75} />
@@ -272,8 +274,7 @@ const handleDownloadResume = () => {
               description="This portfolio website built with Next.js and Tailwind CSS."
               tags={["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"]}
               image="/my-portfolio.svg?height=400&width=600"
-              demoUrl="https://example.com"
-              repoUrl="https://github.com"
+              repoUrl="https://github.com/AnkushOff/My-Portfolio"
             />
           </div>
         </div>

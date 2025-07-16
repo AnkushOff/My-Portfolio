@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { ArrowUpRight, Github } from "lucide-react"
+import { Github } from "lucide-react"
 import { motion } from "framer-motion"
 
 import { Button } from "@/components/ui/button"
@@ -13,11 +13,10 @@ interface ProjectCardProps {
   description: string
   tags: string[]
   image: string
-  demoUrl?: string
   repoUrl: string
 }
 
-export function ProjectCard({ title, description, tags, image, demoUrl, repoUrl }: ProjectCardProps) {
+export function ProjectCard({ title, description, tags, image, repoUrl }: ProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
@@ -63,20 +62,6 @@ export function ProjectCard({ title, description, tags, image, demoUrl, repoUrl 
                   <Github className="mr-2 h-4 w-4" />
                   Code
                 </Link>
-              </Button>
-              <Button
-                size="sm"
-                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0"
-                asChild
-              >
-                {demoUrl ? (
-                  <Link href={demoUrl} target="_blank" rel="noopener noreferrer">
-                    <ArrowUpRight className="mr-2 h-4 w-4" />
-                    Demo
-                  </Link>
-                ) : (
-                  <span>Demo</span>
-                )}
               </Button>
             </div>
           </div>

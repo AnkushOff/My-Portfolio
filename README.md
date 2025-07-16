@@ -30,12 +30,12 @@ To run this project locally, follow these steps:
 
 1. Clone the repository:
    \`\`\`bash
-   git clone [https://github.com/AnkushOff/My-Portfolio]
+   git clone https://github.com/shinekyaw/Creative-Portfolio.git
    \`\`\`
 
 2. Navigate to the project directory:
    \`\`\`bash
-   cd My-Portfolio
+   cd Creative-Portfolio
    \`\`\`
 
 3. Install dependencies:

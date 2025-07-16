@@ -8,21 +8,23 @@ const experiences = [
     title: "Data Analyst Intern",
     company: "John Deere Pvt. Ltd India",
     period: "Jan 2025 - July 2025",
-    description:(
-    <>
-      <p>
-        Led the development of a machine learning-based content moderation tool, improving detection accuracy by 30% and cutting manual review time by 40%.
-      </p>
-      <p>
-        Created and maintained interactive Power BI dashboards to visualize system performance, providing actionable insights to business stakeholders.
-      </p>
-      <p>
-        Collaborated with cross-functional teams including developers, data scientists, and business analysts to gather requirements and deliver end-to-end data solutions aligned with company objectives.
-      </p>
-    </>
-  ),
-
-  }
+    description: (
+      <>
+        <p>
+          Led the development of a machine learning-based content moderation tool, improving detection accuracy by 30%
+          and cutting manual review time by 40%.
+        </p>
+        <p>
+          Created and maintained interactive Power BI dashboards to visualize system performance, providing actionable
+          insights to business stakeholders.
+        </p>
+        <p>
+          Collaborated with cross-functional teams including developers, data scientists, and business analysts to
+          gather requirements and deliver end-to-end data solutions aligned with company objectives.
+        </p>
+      </>
+    ),
+  },
 ]
 
 export function Timeline() {
@@ -56,7 +58,7 @@ export function Timeline() {
                 <div className="text-zinc-400 mb-4">
                   {experience.company} | {experience.period}
                 </div>
-                <p className="text-zinc-300">{experience.description}</p>
+                <div className="text-zinc-300 space-y-2">{experience.description}</div>
               </div>
             </div>
           </motion.div>

@@ -43,8 +43,8 @@ export function FloatingNav() {
   const handleDownloadResume = () => {
     // Method 1: If you have a PDF file in the public folder
     const link = document.createElement("a")
-    link.href = "/Ankush_Nag_Resume.pdf" // Place your PDF in the public folder
-    link.download = "Ankush_Nag_Resume.pdf"
+    link.href = "/Ankush_Nag_Resume.pdf" // Use the exact filename
+    link.download = "Ankush_Nag_Resume.pdf" // Use the exact filename for download
     link.target = "_blank"
     document.body.appendChild(link)
     link.click()
