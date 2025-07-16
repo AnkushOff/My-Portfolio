@@ -258,7 +258,7 @@ export default function Portfolio() {
               title="Task Management App"
               description="A collaborative task management application with real-time updates."
               tags={["React", "Firebase", "Tailwind CSS", "Redux"]}
-              image="/placeholder.svg?height=400&width=600"
+              image="/task-management.svg?height=400&width=600"
               demoUrl="https://example.com"
               repoUrl="https://github.com"
             />
