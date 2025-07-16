@@ -245,12 +245,11 @@ export default function Portfolio() {
               repoUrl="https://github.com/AnkushOff/Tic-Tac-Toe"
             />
             <ProjectCard
-              title="Task Management App"
+              title="Sign Language Detector"
               description="A collaborative task management application with real-time updates."
-              tags={["React", "Firebase", "Tailwind CSS", "Redux"]}
-              image="/task-management.svg?height=400&width=600"
-              demoUrl="https://example.com"
-              repoUrl="https://github.com"
+              tags={["Python", "Machine Learning"]}
+              image="/sign-language.svg?height=400&width=600"
+              repoUrl="https://github.com/AnkushOff/Sign-Language-Detector"
             />
             <ProjectCard
               title="Covid 19 Risk Predictor"
@@ -348,8 +347,8 @@ export default function Portfolio() {
         <div className="container flex flex-col md:flex-row justify-between items-center gap-6">
           <div>
             <Link href="/" className="font-bold text-xl">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">Bright</span>
-              <span className="text-white">ANK</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">{"Ank"}</span>
+              <span className="text-white">{".cse"}</span>
             </Link>
             <p className="text-sm text-zinc-500 mt-2">© {new Date().getFullYear()} Ankush Nag. All rights reserved.</p>
           </div>

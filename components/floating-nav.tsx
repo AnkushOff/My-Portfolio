@@ -69,9 +69,9 @@ export function FloatingNav() {
             <div className="relative flex items-center justify-between">
               <Link href="/" className="font-bold text-lg">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
-                  Bright
+                  Ank
                 </span>
-                <span className="text-white">ANK</span>
+                <span className="text-white">.CSE</span>
               </Link>
               <Button
                 variant="ghost"
@@ -86,9 +86,9 @@ export function FloatingNav() {
             <div className="relative flex items-center gap-1">
               <Link href="/" className="font-bold text-lg mr-4">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
-                  {"Bright"}
+                  {"Ank"}
                 </span>
-                <span className="text-white">{"ANK"}</span>
+                <span className="text-white">{".cse"}</span>
               </Link>
               {navItems.map((item) => (
                 <Link
