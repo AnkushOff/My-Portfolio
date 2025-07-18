@@ -37,4 +37,3 @@ This is a **static personal portfolio**. However, we still care about:
 - Uses HTTPS for all links
 - Dependencies are regularly reviewed and updated
 - External libraries are used from trusted CDNs or pinned versions
-
