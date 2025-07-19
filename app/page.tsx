@@ -19,8 +19,8 @@ export default function Portfolio() {
   const handleDownloadResume = () => {
     // Method 1: If you have a PDF file in the public folder
     const link = document.createElement("a")
-    link.href = "/Ankush_Nag_Resume.pdf" // Use the exact filename
-    link.download = "Ankush_Nag_Resume.pdf" // Use the exact filename for download
+    link.href = "/Ankush Nag Resume.pdf" // Use the exact filename
+    link.download = "Ankush Nag Resume.pdf" // Use the exact filename for download
     link.target = "_blank"
     document.body.appendChild(link)
     link.click()
