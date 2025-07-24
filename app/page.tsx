@@ -246,7 +246,7 @@ export default function Portfolio() {
             />
             <ProjectCard
               title="Sign Language Detector"
-              description="A collaborative task management application with real-time updates."
+              description="A real-time Sign Language Detector using machine learning and computer vision."
               tags={["Python", "Machine Learning"]}
               image="/sign-language.svg?height=400&width=600"
               repoUrl="https://github.com/AnkushOff/Sign-Language-Detector"
